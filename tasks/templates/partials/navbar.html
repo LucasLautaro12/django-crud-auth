@@ -1,0 +1,23 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg bg-dark navbar-black">
+    <div class="container">
+        <a class="navbar-brand btn btn-primary" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/tasks">tasks</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/tasks_completed/">tasks_completed</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/tasks/create/">create_tasks</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/logout">logout</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/signup">signup</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="/signin">signin</a></li>
+                    {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
